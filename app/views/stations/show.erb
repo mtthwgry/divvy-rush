@@ -1,0 +1,24 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-xs-6 text-center">Time</div>
+      <div class="col-xs-3 text-center">Bikes</div>
+      <div class="col-xs-3 text-center">Docks</div>
+    </div>
+  </li>
+  <% @station.availabilities.last(10).each do |availability| %>
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= availability.time %>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= availability.bikes %>
+      </div>
+      <div class="col-xs-3 text-center">
+        <%= availability.docks %>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>

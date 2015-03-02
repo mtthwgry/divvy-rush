@@ -1,0 +1,31 @@
+<div id="stations">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-fixed">
+      <div class="row">
+        <div class="col-xs-6 text-center">Station</div>
+        <div class="col-xs-3 text-center">Bikes</div>
+        <div class="col-xs-3 text-center">Docks</div>
+      </div>
+    </li>
+    <% @stations.each do |station| %>
+    <li class="list-group-item">
+      <div class="row">
+        <a href="/stations/<%= station.id %>">
+          <div class="col-xs-6">
+            <% if station.hot? %>
+            <span class="label label-danger"><span class="glyphicon glyphicon-alert"></span></span>
+            <% end %>
+            <%= station.name %>
+          </div>
+        </a>
+        <div class="col-xs-3 text-center">
+          <span class="label label-<%= station.hot_bikes? ? "danger" : "success" %>"><%= station.current_bikes %></span>
+        </div>
+        <div class="col-xs-3 text-center">
+          <span class="label label-<%= station.hot_docks? ? "danger" : "success" %>"><%= station.current_docks %></span>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>

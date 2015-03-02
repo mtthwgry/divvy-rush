@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR1M9DcFfc_uHA-h6BSwLE7aOV-q4FhgY"></script>
+  <script src="/js/application.js"></script>
+
+  <title>DivvyRUSH</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav">
+          <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </button>
+        <a href="/" class="navbar-brand">DivvyRUSH</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="top-nav">
+        <ul class="nav navbar-nav">
+          <li><a id="all" href="/stations">All Stations</a></li>
+          <li><a id="hot" href="/stations/hot">Hot Stations</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="map-canvas"></div>
+  <%= yield %>
+</body>
+</html>
